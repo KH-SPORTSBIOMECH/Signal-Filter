@@ -1,4 +1,4 @@
-/ # Butterworth low pass filter
+# Butterworth low pass filter
 
 ``` python
 
@@ -21,6 +21,7 @@ def Filter_Low(Var1, Fl, Nf, SamplingRate):
 ```
 
 
+# Bandpass filter
 
 ``` python
 
