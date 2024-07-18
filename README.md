@@ -1,6 +1,6 @@
 # Signal-Filter
 
-''' python
+``` python
 
 import pandas as pd
 import scipy.signal
@@ -27,4 +27,4 @@ def BandpathFilter(Var, LOW, HIGH, SamplingRate):
     Rs = pd.Series(FilterData)
     
     return Rs
-'''
+```
