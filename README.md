@@ -2,6 +2,7 @@
 
 ``` python
 
+import pandas as pd
 from scipy import signal
 
 def Filter_Low(Var1, Fl, Nf, SamplingRate):
