@@ -26,7 +26,7 @@ def BandpathFilter(Var, LOW, HIGH, SamplingRate):
     b, a = scipy.signal.butter(order, [low, high], 'bandpass', analog=False)
     FilterData = scipy.signal.filtfilt(b, a, Var, axis=0).flatten()
     
-    Rs = pd.Series(FilterData)
+    BandpathFilterData = pd.Series(FilterData)
     
-    return Rs
+    return BandpathFilterData
 ```
