@@ -1,4 +1,26 @@
-# Signal-Filter
+/ # Butterworth low pass filter
+
+``` python
+
+from scipy import signal
+
+def Filter_Low(Var1, Fl, Nf, SamplingRate):
+    '''
+    Filter setting
+    Fl: ローパスフィルターの遮断周波数 (Hz)
+    Nf: 4 フィルタの次数
+    SamplingRate:  測定機器の遮断周波数 (Hz)
+    '''
+
+    bl, al = signal.butter(Nf, Fl, 'low', fs = SamplingRate)
+    FilterData = signal.filtfilt(bl, al, Var1).flatten()
+    
+    LowpassFilterData = pd.Series(FilterData)
+
+    return LowpassFilterData
+```
+
+
 
 ``` python
 
