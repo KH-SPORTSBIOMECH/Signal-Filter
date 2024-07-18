@@ -6,11 +6,13 @@ import pandas as pd
 import scipy.signal
 
 def BandpathFilter(Var, LOW, HIGH, SamplingRate):
-    # Filter setting
-    # LOW: 低周波数域
-    # HIGH: 高周波数域
-    # SamplingRate:　測定機器の遮断周波数
-    
+    '''
+    Filter setting
+    LOW: 低周波数域
+    HIGH: 高周波数域
+    SamplingRate:　測定機器の遮断周波数
+    '''
+
     fs = SamplingRate
     lowcut = LOW
     highcut = HIGH
