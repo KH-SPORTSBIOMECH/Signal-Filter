@@ -1,6 +1,6 @@
 # 4th order Butterworth low pass filter
 
-## Matlab
+> Matlab
 ```Matlab
 function [filter_data] = smooth_marker(raw_data, fc_optimal, fs)
     [b,a] = butter(4,fc_optimal/(fs/2));
