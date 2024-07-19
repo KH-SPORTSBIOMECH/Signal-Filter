@@ -1,6 +1,6 @@
 # 4th order Butterworth low pass filter
 
-> Matlab
+> **Matlab**
 ```Matlab
 function [filter_data] = smooth_marker(raw_data, fc_optimal, fs)
     [b,a] = butter(4,fc_optimal/(fs/2));
@@ -15,7 +15,7 @@ end
 
 `fs`には測定機材のサンプリング周波数を設定します（例. VICON: 250 Hz, GRF: 1000 Hz）。
 
-## Python
+> **Python**
 ``` python
 
 import pandas as pd
@@ -43,7 +43,7 @@ def Filter_Low(Var1, Fl, Nf, SamplingRate):
 
 # 4th order Bandpass filter
 
-## Matlab
+> **Matlab**
 ``` Matlab
 function [filtered_data] = bandpass_filter(data, fc_low, fc_high, fs)
     order = 4;      % フィルターの次数
@@ -59,7 +59,7 @@ end
 
 
 
-## Python
+> **Python**
 ``` python
 
 import pandas as pd
