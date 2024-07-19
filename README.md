@@ -1,5 +1,21 @@
-# Butterworth low pass filter
+# 4th order Butterworth low pass filter
 
+## Matlab
+```Matlab
+function [filter_data] = smooth_marker(raw_data, fc_optimal, fs)
+    [b,a] = butter(4,fc_optimal/(fs/2));
+    
+    filter_data = filtfilt(b,a,raw_data);
+end
+```
+
+`raw_data`はノイズがある時系列データを入力します。
+
+`fc_optimal`には任意のカットオフ周波数（Hz）を設定します。
+
+`fs`には測定機材のサンプリング周波数を設定します（例. VICON: 250 Hz, GRF: 1000 Hz）。
+
+## Python
 ``` python
 
 import pandas as pd
@@ -22,8 +38,28 @@ def Filter_Low(Var1, Fl, Nf, SamplingRate):
 ```
 
 
-# Bandpass filter
 
+
+
+# 4th order Bandpass filter
+
+## Matlab
+``` Matlab
+function [filtered_data] = bandpass_filter(data, fc_low, fc_high, fs)
+    order = 4;      % フィルターの次数
+    [b, a] = butter(order, [fc_low fc_high] / (fs / 2), 'bandpass');
+    filtered_data = filtfilt(b, a, data);
+end
+```
+
+`data`にはノイズがある時系列データを入力します。
+`fc_low`には任意の低域カットオフ周波数（Hz）を設定します。
+`fc_high`には任意の高域カットオフ周波数（Hz）を設定します。
+`fs`には測定機材のサンプリング周波数を設定します（例. VICON: 250 Hz, GRF: 1000 Hz）。
+
+
+
+## Python
 ``` python
 
 import pandas as pd
